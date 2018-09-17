@@ -15,12 +15,15 @@ app.use(routing.cats);
 
 app.get('/autic', (req, resp)=>{
     var Category = require('./models/Category');
-    // Category.createCategory({name: "firstttttttttttt", price: 1000}, (err, result)=> {
+    // // Category.createCategory({name: "firstttttttttttt", price: 1000}, (err, result)=> {
+    // //     resp.json(result);
+    // // });
+    // Category.readCategories((err, result)=>{
+    //     if(err) throw err;
     //     resp.json(result);
-    // });
-    Category.readCategories((err, result)=>{
-        if(err) throw err;
-        resp.json(result);
+    // })
+    Category.find((err, result)=>{
+        resp.json(result)
     })
 });
 

@@ -13,7 +13,7 @@ var catSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     }
-});
+}/* ,{timestamps:true} */);
 
 var Category = module.exports = mongoose.model('categories', catSchema);
 
