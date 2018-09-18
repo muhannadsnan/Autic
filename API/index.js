@@ -1,17 +1,16 @@
 var express = require('express');
 var app = express();
 var body = require('body-parser');
+var env = require('./environment/environment')
 
 // DB CONNECTION
 var mongoose = require('mongoose');
-// mongoose.connect("mongodb://test-mnd:VtgKowpbvz1s0m7nwpxERN0Zvsag0MELNSis12UxrVgtMPlUuYHORuNffI1WfXJCSyfQAMRecr99CDq9IEvsNA==@test-mnd.documents.azure.com:10255/?ssl=true&replicaSet=globaldb", { useNewUrlParser: true });
-mongoose.connect("mongodb://localhost/autic", { useNewUrlParser: true });
+mongoose.connect(env.db.uri, { useNewUrlParser: true });
 var db = mongoose.connection;
 
 // ROUTES
 var routing = require('./routes/index');
 app.use(routing.cats);
-// app.use(routing.products);
 
 app.get('/autic', (req, resp)=>{
     var Category = require('./models/Category');
