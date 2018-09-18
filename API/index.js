@@ -25,7 +25,7 @@ app.get('/autic', (req, resp)=>{
         resp.json(result)
     })
 });
-
+ 
 // LISTEN
 app.listen(3000);
 console.log("Node running on port 3000...");
