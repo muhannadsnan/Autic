@@ -9,6 +9,9 @@ var catsController = require("./controllers/catsController");
 var routing = require('./routes');
 app.use(routing.cats);
 app.get('/autic', catsController.index);
+app.get('/', (req, resp)=>{
+    resp.send("<h1>Hallooooooo !</h1>");
+});
 
 // LISTEN
 app.listen(envDB.port);
