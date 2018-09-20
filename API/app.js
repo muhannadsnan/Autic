@@ -6,10 +6,10 @@ var envDB = env.db;
 var catsController = require("./controllers/catsController");
 
 // ROUTES
-var routing = require('./routes/index');
+var routing = require('./routes');
 app.use(routing.cats);
 app.get('/autic', catsController.index);
 
 // LISTEN
 app.listen(envDB.port);
-console.log("Node running on port 3000...");
+console.log(`Node running on port ${envDB.port}...`);
